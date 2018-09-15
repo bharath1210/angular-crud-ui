@@ -1,0 +1,20 @@
+<div class="container" >
+  <div class="row m-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 p-4"style="background-color: lightgrey;color:green">
+      <form name="myForm" #myForm="ngForm" (ngSubmit)=userLogin()> 
+        <div class="form-group">
+          <label>user name:</label>
+          <input type="text" required placeholder="user name" [(ngModel)]="user.username" class="form-control" name="username">
+        </div>
+        <div class="form-group">
+            <label>password:</label>
+            <input type="password" required placeholder="password" [(ngModel)]="user.password" class="form-control" name="password">
+          </div>
+          <div class="form-group text-center">
+          
+          <button type="submit" class="btn btn-info" [disabled]="myForm.invalid">login</button></div>        
+      </form>
+    </div>
+  </div>
+</div>

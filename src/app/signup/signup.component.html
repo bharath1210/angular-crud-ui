@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row m-4">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 p-4" style="background-color: teal; color:white">
+      <form name="myForm" #myForm="ngForm" (ngSubmit)="userSignin()">
+        <div class="form-group">
+          <label>username:</label>
+          <input type="text" required placeholder="username" [(ngModel)]="user.username" class="form-control" name="username">
+        </div>
+        <div class="form-group">
+          <label>Firstname:</label>
+          <input type="text" required placeholder="fname" [(ngModel)]="user.fname" class="form-control" name="fname">
+        </div>
+        <div class="form-group">
+          <label>Lastname:</label>
+          <input type="text" required placeholder="lname" [(ngModel)]="user.lname" class="form-control" name="lname">
+        </div>
+        <div class="form-group">
+          <label>email:</label>
+          <input type="text" required placeholder="email" [(ngModel)]="user.email" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+          <label>password:</label>
+          <input type="password" required placeholder="new password" [(ngModel)]="user.password" class="form-control" name="password">
+
+        </div>
+        <div class="form-group text-center">
+          <button class="btn btn-secondary" [disabled]="myForm.invalid">sign in</button></div>
+      </form>
+    </div>
+  </div>
+</div>

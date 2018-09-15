@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 mt-4 p-4" style="background-color: lightcoral">
+      <form name="myForm" #myForm="ngForm" (ngSubmit)="postData()">       
+        <div class="form-group">
+          <label>Book name:</label>
+          <input type="text" class="form-control" [(ngModel)]="data.name" placeholder="Enter book name" name="name">
+        </div>
+        <div class="form-group">
+          <label>Author name:</label>
+          <input type="text" class="form-control" [(ngModel)]="data.author" placeholder="Enter author name" name="author">
+        </div>
+        <div class="form-group">
+          <label>Published year:</label>
+          <input type="date" class="form-control" [(ngModel)]="data.year" placeholder="published date" name="year">
+        </div>
+        <button type="submit" class="btn btn-success" >Create</button>
+      </form>
+    </div>
+
+  </div>
+</div>

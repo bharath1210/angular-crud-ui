@@ -1,0 +1,40 @@
+<!-- Books Display -->
+<div class="container" >
+  <button class="btn btn-success m-4" (click)="showlist()">Refresh</button>
+   <div class="row">
+     <div class="col-md-2"></div>
+   <div class="col-md-8 mt-4">
+    <table class="table table-bordered">
+      <thead class="thead" style="background-color:cadetblue">
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody style="background-color: white">
+          <tr *ngFor="let book of books">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
+            <td><a class="btn btn-info" [routerLink]="['edit', book._id]" >update</a> 
+              <button class="btn btn-danger ml-4" (click)= "remove(book)">delete</button></td>
+          </tr>
+          <tr >
+            <td colspan="10" class="text-center" *ngIf="!books.length">No Data Found</td>
+          </tr>
+        </tbody>
+    </table>
+   </div>
+  </div>
+   <!-- If No Books Found -->
+   <!-- <section class="row" *ngIf="books.length === 0">
+     <div class="col mt-4">
+       <h1>No Books Found <a routerLink="create"><button class="btn btn-primary m-4">Create New Book</button></a>
+       </h1>
+       
+     </div>
+   </section> -->
+ 
+</div>
